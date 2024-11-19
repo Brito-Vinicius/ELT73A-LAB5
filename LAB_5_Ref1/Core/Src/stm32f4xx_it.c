@@ -225,6 +225,7 @@ void ADC_IRQHandler(void)
   /* USER CODE BEGIN ADC_IRQn 1 */
   adc1in1 = HAL_ADC_GetValue(&hadc1);
   voltage = (adc1in1 * 3.3) / 4095;
+  TIM2->CCR1 = adc1in1;
   /* USER CODE END ADC_IRQn 1 */
 }
 
